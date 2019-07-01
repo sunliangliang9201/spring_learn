@@ -5,4 +5,13 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 配置service -->
     <bean id="userServiceId" class="com.sunll.ioc.UserServiceImpl"></bean>
+
+
+
+    <bean id="bookServiceId" class="com.sunll.di.BookServiceImpl">
+        <property name="bookDao" ref="bookDaoId"></property>
+    </bean>
+
+    <bean id="bookDaoId" class="com.sunll.di.BookDaoImpl"></bean>
+
 </beans>
