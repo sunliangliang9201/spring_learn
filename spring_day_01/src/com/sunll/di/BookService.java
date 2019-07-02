@@ -1,5 +1,7 @@
 package com.sunll.di;
 
 public interface BookService {
-    public void add();
+
+	public abstract void addBook();
+
 }
