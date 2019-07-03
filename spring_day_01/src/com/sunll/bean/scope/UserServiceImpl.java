@@ -1,10 +1,10 @@
-package com.sunll.bean.staticfactory;
+package com.sunll.bean.scope;
 
 public class UserServiceImpl implements UserService {
 
 	@Override
 	public void addUser() {
-		System.out.println("b_static_factory add user");
+		System.out.println("factory add user");
 	}
 
 }

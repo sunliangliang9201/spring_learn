@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="personId" class="com.sunll.bean.xmlinject.setter.Person">
+        <property name="pName" value="sunll"></property>
+        <property name="pAge" value="27"></property>
+        <property name="pHomeAddr" ref="addressId"></property>
+    </bean>
+
+    <bean id="addressId" class="com.sunll.bean.xmlinject.setter.Address"></bean>
+</beans>
