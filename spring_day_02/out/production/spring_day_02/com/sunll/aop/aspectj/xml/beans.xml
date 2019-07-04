@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userServiceId" class="com.sunll.aop.aspectj.xml.UserServiceImpl"></bean>
+
+    <bean id="myAspectId" class="com.sunll.aop.aspectj.xml.MyAspect"></bean>
+
+    <aop:config>
+        <aop:aspect ref="myAspectId">
+            <aop:pointcut id="myPointCut" expression="execution(* com.sunll.aop.aspectj.xml.UserServiceImpl.*(..))"/>
+<!-- 前置           <aop:before method="myBefore" pointcut-ref="myPointCut"></aop:before>-->
+<!-- 后置返回           <aop:after-returning method="myAfterReturning" pointcut-ref="myPointCut" returning="returning" ></aop:after-returning>-->
+<!--                <aop:around method="myAround" pointcut-ref="myPointCut"></aop:around>-->
+<!--            <aop:after-throwing method="myAfterThrowing" pointcut-ref="myPointCut" throwing="e"></aop:after-throwing>-->
+            <aop:after method="myAfter" pointcut-ref="myPointCut"></aop:after>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

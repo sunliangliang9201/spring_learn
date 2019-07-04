@@ -1,4 +1,4 @@
-package com.sunll.aop.proxy.jdk;
+package com.sunll.aop.proxy.spring.all_auto;
 
 /**
  * desc
@@ -10,21 +10,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void addUser() {
-        System.out.println("jdk add user");
+        System.out.println("spring all-auto add user");
 
     }
 
     @Override
     public void updateUser() {
-        System.out.println("jdk update user");
+        System.out.println("spring all-auto update user");
     }
 
     @Override
     public void deleteUser() {
-        System.out.println("jdk delete user");
-    }
-
-    public void test(){
-        System.out.println("test");
+        System.out.println("spring all-auto delete user");
     }
 }
