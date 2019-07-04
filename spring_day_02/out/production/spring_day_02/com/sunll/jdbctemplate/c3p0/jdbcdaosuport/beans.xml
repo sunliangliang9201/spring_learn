@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataSourceId" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://103.26.158.182:3306/spring"></property>
+        <property name="user" value="spring"></property>
+        <property name="password" value="spring"></property>
+    </bean>
+<!--    这样配置方式是因为采用了jdbcdaosuport的支持，底层帮我们创建了jdbctemplate并注入到userdao中-->
+    <bean id="userDaoId" class="com.sunll.jdbctemplate.c3p0.jdbcdaosuport.UserDao">
+        <property name="dataSource" ref="dataSourceId"></property>
+    </bean>
+</beans>
