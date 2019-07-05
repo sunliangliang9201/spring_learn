@@ -12,7 +12,7 @@
   <title>Insert title here</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/userAction_register" method="post">
+<form action="/userAction_register" method="post">
   用户名：<input type="text" name="username"/> <br/>
   密码：<input type="password" name="password"/> <br/>
   年龄：<input type="text" name="age"/> <br/>

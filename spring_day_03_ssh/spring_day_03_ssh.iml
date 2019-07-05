@@ -3,7 +3,9 @@
   <component name="FacetManager">
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map />
+        <datasource-map>
+          <unit-entry name="sessionFactory" />
+        </datasource-map>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -60,5 +62,6 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="antlr-2.7.6" level="project" />
     <orderEntry type="library" name="struts2-spring-plugin-2.3.15.3" level="project" />
+    <orderEntry type="library" name="antlr-2.7.6 (2)" level="project" />
   </component>
 </module>
