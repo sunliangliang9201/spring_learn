@@ -7,6 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="spring_day_03_ssh" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="antlr-2.7.6" />
+          <element id="library" level="project" name="Spring-3.2.18.RELEASE" />
+          <element id="library" level="project" name="Struts 2-2.3.15.3" />
+          <element id="library" level="project" name="Hibernate 3.6.10-3.6.10" />
+        </element>
       </element>
     </root>
   </artifact>
