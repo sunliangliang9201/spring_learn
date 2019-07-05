@@ -1,4 +1,4 @@
-package com.sunll.tx01.dao;
+package com.sunll.tx02.dao;
 
 /**
  * desc
