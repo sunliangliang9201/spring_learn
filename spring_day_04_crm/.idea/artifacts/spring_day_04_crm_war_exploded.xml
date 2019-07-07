@@ -7,6 +7,14 @@
         <element id="directory" name="classes">
           <element id="module-output" name="spring_day_04_crm" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="lib2" />
+          <element id="library" level="project" name="Spring-3.2.18.RELEASE" />
+          <element id="library" level="project" name="Struts 2-2.5.14.1" />
+          <element id="library" level="project" name="Hibernate 3.6.10-3.6.10" />
+          <element id="library" level="project" name="lib (2)" />
+        </element>
       </element>
     </root>
   </artifact>

@@ -5,4 +5,15 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+    <!--常量-->
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.ui.theme" value="simple"/>
+
+    <!--公共项-->
+    <package name="common" namespace="/" extends="struts-default">
+
+    </package>
+
+    <!--加载其他struts配置文件-->
+    <include file="struts-staff.xml"/>
 </struts>
