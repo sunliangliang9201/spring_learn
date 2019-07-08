@@ -19,4 +19,13 @@
         (username,birthday,sex,address)
         values(#{username}, #{birthday}, #{sex}, #{address})
     </insert>
+
+    <insert id="insertUser2" parameterType="com.sunll.mybatis.po.User">
+        <selectKey keyProperty="id" resultType="string" order="BEFORE">
+            select UUID()
+        </selectKey>
+        insert into user
+        (id, username, birthday, sex, address)
+        values(#{id}, #{username}, #{birthday}, #{sex}, #{address})
+    </insert>
 </mapper>
