@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="spring_day_04_crm:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/spring_day_04_crm_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/out/spring_day_04_explored</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="spring_day_04_crm/web/Web" />
       <element id="directory" name="WEB-INF">
