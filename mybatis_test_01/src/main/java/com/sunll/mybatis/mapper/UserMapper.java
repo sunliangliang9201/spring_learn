@@ -15,4 +15,8 @@ public interface UserMapper {
     public User findUserById(int id);
 
     public void insertUser(User user);
+
+    User findUserRstMap(int id);
+
+    List<User> findUserList(String );
 }

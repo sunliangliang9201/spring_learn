@@ -44,4 +44,13 @@ public class UserMapperTest {
         sqlSession.commit();
         sqlSession.close();
     }
+
+    @Test
+    public void findUserRstMap(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        User user = userMapper.findUserRstMap(28);
+        System.out.println(user);
+        sqlSession.close();
+    }
 }

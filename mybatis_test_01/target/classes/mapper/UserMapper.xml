@@ -2,7 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+
 <mapper namespace="com.sunll.mybatis.mapper.UserMapper">
+    <resultMap id="resultMap" type="com.sunll.mybatis.po.User">
+        <id column="id_" property="id"/>
+        <id column="username1_" property="username"/>
+        <id column="birthday_" property="birthday"/>
+        <id column="sex_" property="sex"/>
+        <id column="address" property="address"/>
+    </resultMap>
     <select id="findUserById" parameterType="int" resultType="com.sunll.mybatis.po.User">
         select id, username, birthday, sex, address from user where id = #{id}
     </select>
@@ -16,12 +24,8 @@
         values(#{username}, #{birthday}, #{sex}, #{address})
     </insert>
 
-    <insert id="insertUser2" parameterType="com.sunll.mybatis.po.User">
-        <selectKey keyProperty="id" resultType="string" order="BEFORE">
-            select UUID()
-        </selectKey>
-        insert into user
-        (id, username, birthday, sex, address)
-        values(#{id}, #{username}, #{birthday}, #{sex}, #{address})
-    </insert>
+    <select id="findUserRstMap" parameterType="int" resultMap="resultMap">
+        select id as id_, username as username_, birthday as birthday_, address as address_ from user where id = #{id}
+    </select>
+
 </mapper>
