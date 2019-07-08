@@ -34,5 +34,6 @@
     <!-- Continue editing here -->
     <mappers>
         <mapper resource="User.xml"></mapper>
+        <mapper resource="mapper/UserMapper.xml"></mapper>
     </mappers>
 </configuration>
