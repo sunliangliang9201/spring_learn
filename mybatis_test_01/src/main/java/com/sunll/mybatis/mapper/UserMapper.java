@@ -18,5 +18,4 @@ public interface UserMapper {
 
     User findUserRstMap(int id);
 
-    List<User> findUserList(String );
 }
