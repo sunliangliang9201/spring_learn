@@ -1,6 +1,7 @@
 package com.sunll.mybatis.po;
 
 import java.util.Date;
+import java.util.List;
 
 public class Orders {
     private Integer id;
@@ -12,6 +13,16 @@ public class Orders {
     private Date createtime;
 
     private String note;
+
+    private List<Orderdetail> detailList;
+
+    public void setDetailList(List<Orderdetail> detailList) {
+        this.detailList = detailList;
+    }
+
+    public List<Orderdetail> getDetailList() {
+        return detailList;
+    }
 
     public Integer getId() {
         return id;
@@ -41,6 +52,18 @@ public class Orders {
         return createtime;
     }
 
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", number='" + number + '\'' +
+                ", createtime=" + createtime +
+                ", note='" + note + '\'' +
+                ", detailList=" + detailList +
+                '}';
+    }
+
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
     }
@@ -48,6 +71,8 @@ public class Orders {
     public String getNote() {
         return note;
     }
+
+
 
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();

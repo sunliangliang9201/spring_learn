@@ -5,6 +5,18 @@ import java.util.Date;
 public class Items {
     private Integer id;
 
+    @Override
+    public String toString() {
+        return "Items{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", pic='" + pic + '\'' +
+                ", createtime=" + createtime +
+                ", detail='" + detail + '\'' +
+                '}';
+    }
+
     private String name;
 
     private Float price;

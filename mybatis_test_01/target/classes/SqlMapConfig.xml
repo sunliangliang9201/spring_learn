@@ -35,5 +35,8 @@
     <mappers>
         <mapper resource="User.xml"></mapper>
         <mapper resource="mapper/UserMapper.xml"></mapper>
+        <!--<package name="mapper"></package>-->
+        <mapper resource="mapper/OrdersMapper.xml"></mapper>
+<!--        <package name="mapper"/>-->
     </mappers>
 </configuration>

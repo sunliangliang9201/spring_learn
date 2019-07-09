@@ -9,6 +9,16 @@ public class Orderdetail {
 
     private Integer itemsNum;
 
+    private Items items;
+
+    public void setItems(Items items) {
+        this.items = items;
+    }
+
+    public Items getItems() {
+        return items;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -23,6 +33,18 @@ public class Orderdetail {
 
     public void setOrdersId(Integer ordersId) {
         this.ordersId = ordersId;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Orderdetail{" +
+                "id=" + id +
+                ", ordersId=" + ordersId +
+                ", itemsId=" + itemsId +
+                ", itemsNum=" + itemsNum +
+                ", items=" + items +
+                '}';
     }
 
     public Integer getItemsId() {

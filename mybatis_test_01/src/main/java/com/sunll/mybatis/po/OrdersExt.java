@@ -1,5 +1,7 @@
 package com.sunll.mybatis.po;
 
+import java.util.List;
+
 public class OrdersExt extends Orders {
 
     public void setUsername(String username) {
@@ -21,4 +23,25 @@ public class OrdersExt extends Orders {
     }
 
     private String sex;
+
+    private User user;
+
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+    @Override
+    public String toString() {
+        return "OrdersExt{" +
+                "username='" + username + '\'' +
+                ", sex='" + sex + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
+    public User getUser() {
+        return user;
+    }
 }

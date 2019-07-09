@@ -6,7 +6,7 @@
 <mapper namespace="com.sunll.mybatis.mapper.UserMapper">
     <resultMap id="resultMap" type="com.sunll.mybatis.po.User">
         <id column="id_" property="id"/>
-        <id column="username1_" property="username"/>
+        <id column="username_" property="username"/>
         <id column="birthday_" property="birthday"/>
         <id column="sex_" property="sex"/>
         <id column="address" property="address"/>

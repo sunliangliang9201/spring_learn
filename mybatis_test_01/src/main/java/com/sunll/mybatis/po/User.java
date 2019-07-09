@@ -1,6 +1,7 @@
 package com.sunll.mybatis.po;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * desc
@@ -14,6 +15,15 @@ public class User {
     private String sex;
     private Date birthday;
     private String address;
+    private List<Orders> ordersList;
+
+    public void setOrdersList(List<Orders> ordersList) {
+        this.ordersList = ordersList;
+    }
+
+    public List<Orders> getOrdersList() {
+        return ordersList;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -48,6 +58,7 @@ public class User {
                 ", sex='" + sex + '\'' +
                 ", birthday=" + birthday +
                 ", address='" + address + '\'' +
+                ", ordersList=" + ordersList +
                 '}';
     }
 
