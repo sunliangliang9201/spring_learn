@@ -53,4 +53,30 @@ public class UserMapperTest {
         System.out.println(user);
         sqlSession.close();
     }
+
+    @Test
+    public void testOneLevelCache(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        User user = userMapper.findUserById(1);
+        System.out.println(user);
+        User user2 = userMapper.findUserById(1);
+        System.out.println(user2);
+        sqlSession.close();
+    }
+
+    @Test
+    public void testTwoLevelCache(){
+        SqlSession sqlSession1 = sqlSessionFactory.openSession();
+        SqlSession sqlSession2 = sqlSessionFactory.openSession();
+        UserMapper userMapper1 = sqlSession1.getMapper(UserMapper.class);
+        UserMapper userMapper2 = sqlSession2.getMapper(UserMapper.class);
+        User user1 = userMapper1.findUserById(1);
+        System.out.println(user1);
+        sqlSession1.close();
+        User user2 = userMapper2.findUserById(1);
+        System.out.println(user2);
+
+        sqlSession2.close();
+    }
 }

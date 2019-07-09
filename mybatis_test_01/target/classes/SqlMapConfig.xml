@@ -20,6 +20,7 @@
         <setting name="lazyLoadingEnabled" value="true"/>
         <setting name="aggressiveLazyLoading" value="false"/>
         <setting name="lazyLoadTriggerMethods" value="true"/>
+        <setting name="cacheEnabled" value="true"/>
     </settings>
 
     <!-- 配置mybatis的环境信息，与spring整合，该信息由spring来管理 -->

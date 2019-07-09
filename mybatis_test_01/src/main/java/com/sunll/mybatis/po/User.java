@@ -1,5 +1,6 @@
 package com.sunll.mybatis.po;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * @author sunliangliang
  * @date 2019/7/8 12:13
  */
-public class User {
+public class User implements Serializable {
     private int id;
     private String username;
     private String sex;

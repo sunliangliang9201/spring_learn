@@ -10,6 +10,9 @@
         <id column="sex_" property="sex"/>
         <id column="address" property="address"/>
     </resultMap>
+
+<!--    开启二级缓存-->
+    <cache/>
     <select id="findUserById" parameterType="int" resultType="com.sunll.mybatis.po.User">
         select id, username, birthday, sex, address from user where id = #{id}
     </select>
