@@ -114,4 +114,17 @@
         AND orderdetail.`items_id` = items.`id`
     </select>
 
+    <resultMap id="LazyLoadingRxtMap" type="com.sunll.mybatis.po.OrdersExt">
+        <id column="id" property="id"></id>
+        <result column="user_id" property="userId"></result>
+        <result column="number" property="number"></result>
+        <association property="user" javaType="com.sunll.mybatis.po.User" select="com.sunll.mybatis.mapper.UserMapper.findUserById"
+                     column="user_id">
+        </association>
+    </resultMap>
+<!--    延迟加载-->
+    <select id="findOrdersAndUserLazyLoading" resultMap="LazyLoadingRxtMap">
+        select * from orders
+    </select>
+
 </mapper>

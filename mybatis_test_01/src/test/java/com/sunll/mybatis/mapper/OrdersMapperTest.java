@@ -69,4 +69,15 @@ public class OrdersMapperTest {
         }
         sqlSession.close();
     }
+
+    @Test
+    public void findOrdersAndUserLazyLoading() {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        OrdersMapper mapper = sqlSession.getMapper(OrdersMapper.class);
+        List<OrdersExt> list = mapper.findOrdersAndUserLazyLoading();
+//        for (OrdersExt res: list) {
+//            System.out.println(res);
+//        }
+        sqlSession.close();
+    }
 }

@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
 <mapper namespace="com.sunll.mybatis.mapper.UserMapper">
     <resultMap id="resultMap" type="com.sunll.mybatis.po.User">
         <id column="id_" property="id"/>
