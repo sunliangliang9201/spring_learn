@@ -16,6 +16,21 @@
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    
+    <context:component-scan base-package="com.sunll.controller"></context:component-scan>
+<!--    配置注解处理器映射器-->
+<!--    负责寻找执行类Controller-->
+<!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>-->
+
+<!--&lt;!&ndash;    配置注解的处理器适配器&ndash;&gt;-->
+<!--&lt;!&ndash;    负责执行Controller&ndash;&gt;-->
+<!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+<!--    配置视图解析器-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsps/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
 
 </beans>
