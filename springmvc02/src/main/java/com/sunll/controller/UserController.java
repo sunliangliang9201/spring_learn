@@ -2,9 +2,7 @@ package com.sunll.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,7 +15,7 @@ import java.util.List;
  * @date 2019/7/10 10:56
  */
 @Controller//相当于在配置文件中配置bean，id就是userController class就是本class
-@RequestMapping("register")
+//@RequestMapping("register")
 public class UserController {
 
     //@RequestMapping("/hello")
@@ -127,4 +125,37 @@ public class UserController {
         return "redirect:list.do";
     }
 
+    //跳转requestJson的页面
+    @RequestMapping("toJson")
+    public String toJson(){
+        return "requestJson";
+    }
+
+
+    //接收json格式数据，并使用requestBody把json数据包装为User的javabean
+    //返回User对象，使用responseBody吧user对象强制转换为json对象（不是字符串）
+    @RequestMapping("requestJson")
+    public @ResponseBody User requestJson(@RequestBody User user){
+        System.out.println(user);
+        return user;
+    }
+
+
+    //请求POJO，返回json
+    @RequestMapping("requestPojo")
+    public @ResponseBody User requestPojo(User user){
+        System.out.println(user);
+        return user;
+    }
+
+    //多视图支持
+    @RequestMapping("multiView")
+    public User multiView(){
+        User user1 = new User();
+        user1.setAddress("回龙观1");
+        user1.setAge("27");
+        user1.setBirthday(new Date());
+        user1.setUsername("孙亮亮");
+        return user1;
+    }
 }

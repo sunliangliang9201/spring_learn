@@ -17,13 +17,18 @@
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.sunll.controller"></context:component-scan>
-<!--    配置注解处理器映射器-->
-<!--    负责寻找执行类Controller-->
+<!--&lt;!&ndash;    配置注解处理器映射器&ndash;&gt;-->
+<!--&lt;!&ndash;    负责寻找执行类Controller&ndash;&gt;-->
 <!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>-->
 
-<!--&lt;!&ndash;    配置注解的处理器适配器&ndash;&gt;-->
-<!--&lt;!&ndash;    负责执行Controller&ndash;&gt;-->
-<!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>-->
+<!--&lt;!&ndash;&lt;!&ndash;    配置注解的处理器适配器&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    负责执行Controller&ndash;&gt;&ndash;&gt;-->
+<!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">-->
+<!--&lt;!&ndash;        对json数据格式的支持&ndash;&gt;-->
+<!--        <property name="messageConverters">-->
+<!--            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>-->
+<!--        </property>-->
+<!--    </bean>-->
     <mvc:annotation-driven></mvc:annotation-driven>
 
 <!--    配置视图解析器-->
@@ -32,5 +37,35 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+<!--    配置多视图支持-->
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="contentNegotiationManager">
+            <bean class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+                <property name="mediaTypes">
+                    <map>
+                        <entry key="json" value="application/json"></entry>
+                        <entry key="xml" value="application/xml"></entry>
+                    </map>
+                </property>
+            </bean>
+        </property>
+<!--        指定默认视图-->
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+                <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+                    <constructor-arg>
+                        <bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+                            <property name="classesToBeBound">
+                                <list>
+                                    <value>com.sunll.controller.User</value>
+                                </list>
+                            </property>
+                        </bean>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>
 
 </beans>

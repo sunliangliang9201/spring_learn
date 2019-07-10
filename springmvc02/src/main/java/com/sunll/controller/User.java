@@ -1,5 +1,6 @@
 package com.sunll.controller;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 /**
@@ -8,10 +9,22 @@ import java.util.Date;
  * @author sunliangliang
  * @date 2019/7/10 9:52
  */
+@XmlRootElement
 public class User {
     private Integer id;
     private String username;
     private String age;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", age='" + age + '\'' +
+                ", birthday=" + birthday +
+                ", address='" + address + '\'' +
+                '}';
+    }
 
     public void setId(Integer id) {
         this.id = id;
