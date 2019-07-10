@@ -26,7 +26,23 @@ public class ItemsController {
     @RequestMapping("list")
     public String list(Model model){
         List<Items> list = itemsService.findAll();
-        model.addAttribute("list", list);
+        model.addAttribute("itemsList", list);
         return "itemsList";
+    }
+    //跳转到修改页面
+    @RequestMapping("edit")
+    public String edit(Integer id, Model model){
+        //根据id查询商品
+        Items item = itemsService.findById(id);
+        //页面回显
+        model.addAttribute("item", item);
+        return "editItem";
+    }
+    //更新或保存
+    @RequestMapping("saveOrUpdate")
+    public String saveOrUpdate(Items item){
+        itemsService.saveOrUpdate(item);
+        System.out.println("11111111111111111111111111111111");
+        return "redirect:list.do";
     }
 }

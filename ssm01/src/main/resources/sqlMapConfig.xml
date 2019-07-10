@@ -14,7 +14,7 @@
 
     <!-- Continue editing here -->
     <mappers>
-        <package name="com.sunll.ssm"/>
+        <package name="com.sunll.ssm.dao"/>
     </mappers>
 
 </configuration>

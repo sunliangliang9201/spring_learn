@@ -1,4 +1,4 @@
-package com.sunll.ssm.mapper;
+package com.sunll.ssm.dao;
 
 import com.sunll.ssm.po.User;
 import com.sunll.ssm.po.UserExample;

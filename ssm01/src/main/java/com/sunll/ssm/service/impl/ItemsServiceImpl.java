@@ -1,6 +1,6 @@
 package com.sunll.ssm.service.impl;
 
-import com.sunll.ssm.mapper.ItemsMapper;
+import com.sunll.ssm.dao.ItemsMapper;
 import com.sunll.ssm.po.Items;
 import com.sunll.ssm.service.ItemsService;
 import org.springframework.stereotype.Service;
@@ -24,5 +24,16 @@ public class ItemsServiceImpl implements ItemsService {
     public List<Items> findAll() {
         List<Items> list = itemsMapper.findAll();
         return list;
+    }
+
+    @Override
+    public Items findById(Integer id) {
+        Items item = itemsMapper.selectByPrimaryKey(id);
+        return item;
+    }
+
+    @Override
+    public void saveOrUpdate(Items item) {
+        itemsMapper.updateByPrimaryKey(item);
     }
 }

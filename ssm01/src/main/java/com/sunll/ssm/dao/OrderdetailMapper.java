@@ -1,4 +1,4 @@
-package com.sunll.ssm.mapper;
+package com.sunll.ssm.dao;
 
 import com.sunll.ssm.po.Orderdetail;
 import com.sunll.ssm.po.OrderdetailExample;
