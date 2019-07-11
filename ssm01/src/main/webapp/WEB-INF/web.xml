@@ -6,6 +6,23 @@
   <display-name>Archetype Created Web Application</display-name>
 <!--  过滤器，底层是函数回调，并不是aop-->
   <filter>
+    <filter-name>oscache</filter-name>
+    <filter-class>com.opensymphony.oscache.web.filter.CacheFilter</filter-class>
+    <init-param>
+      <param-name>time</param-name>
+      <param-value>3600</param-value>
+    </init-param>
+    <init-param>
+      <param-name>scope</param-name>
+      <param-value>application</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>oscache</filter-name>
+    <url-pattern>/items/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
     <init-param>
