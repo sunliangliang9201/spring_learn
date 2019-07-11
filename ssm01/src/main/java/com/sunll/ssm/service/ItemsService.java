@@ -17,4 +17,6 @@ public interface ItemsService {
     Items findById(Integer id);
 
     void saveOrUpdate(Items item);
+
+    void deleteById(Integer id);
 }

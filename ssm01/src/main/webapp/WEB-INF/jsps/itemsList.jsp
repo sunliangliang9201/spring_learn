@@ -43,7 +43,7 @@
 	<td>${item.detail }</td>
 	
 	<td><a href="${pageContext.request.contextPath }/items/edit.do?id=${item.id}">修改</a>
-	<a href="${pageContext.request.contextPath }/items/deleteByID.do?id=${item.id}">删除</a>
+	<a href="${pageContext.request.contextPath }/items/deleteById.do?id=${item.id}">删除</a>
 	</td>
 
 </tr>

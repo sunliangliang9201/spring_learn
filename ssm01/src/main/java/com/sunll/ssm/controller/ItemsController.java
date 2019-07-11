@@ -41,8 +41,24 @@ public class ItemsController {
     //更新或保存
     @RequestMapping("saveOrUpdate")
     public String saveOrUpdate(Items item){
+        System.out.println(item);
         itemsService.saveOrUpdate(item);
-        System.out.println("11111111111111111111111111111111");
+        return "redirect:list.do";
+    }
+    //根据id删除
+    @RequestMapping("deleteById")
+    public String deleteBuId(Integer id){
+        itemsService.deleteById(id);
+        return "redirect:list.do";
+    }
+
+    //批量删除，传入数组ids
+    @RequestMapping("deleteByIds")
+    public String deleteByIds(Integer[] id){
+        for (Integer itemId: id
+             ) {
+            itemsService.deleteById(itemId);
+        }
         return "redirect:list.do";
     }
 }

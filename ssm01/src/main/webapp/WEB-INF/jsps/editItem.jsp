@@ -2,18 +2,18 @@
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
-<c:set var="picPath" value="http://127.0.0.1:8003/ssmImage19"></c:set>
+<%--<c:set var="picPath" value="http://127.0.0.1:8003/ssmImage19"></c:set>--%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>修改商品信息</title>
-<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery.form.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<%--<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery.form.js"></script>--%>
 <script type="text/javascript">
 function submitImgSize1Upload(){
-	
-	
+
 	var option={
 			type:'POST',
 			url:'${pageContext.request.contextPath }/upload/uploadPic.do',
@@ -22,20 +22,20 @@ function submitImgSize1Upload(){
 				fileName : 'imgSize1File'
 			},
 			success:function(data){
-				
+
 				//把json格式的字符串转换成json对象
 				var jsonObj = $.parseJSON(data);
-				
+
 				//返回服务器图片路径，把图片路径设置给img标签
 				$("#imgSize1ImgSrc").attr("src",jsonObj.fullPath);
 				//数据库保存相对路径
 				$("#imgSize1").val(jsonObj.relativePath);
 			}
-			
+
 		};
-	
+
 	$("#itemForm").ajaxSubmit(option);
-	
+
 }
 </script>
 
@@ -65,7 +65,7 @@ function submitImgSize1Upload(){
 		<input type='file' id='imgSize1File' name='imgSize1File' class="file" onchange='submitImgSize1Upload()' /><span class="pos" id="imgSize1FileSpan">请上传图片的大小不超过3MB</span>
         <input type='hidden' id='imgSize1' name='pic' value='' reg="^.+$" tip="亲！您忘记上传图片了。" />
 		</p>
- 
+
 	</td>
 </tr>
 <tr>

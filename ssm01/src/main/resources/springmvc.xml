@@ -27,6 +27,11 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+<!--    支持文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10240000"/>
+    </bean>
+
     <!--    配置多视图支持-->
 <!--    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">-->
 <!--        <property name="contentNegotiationManager">-->

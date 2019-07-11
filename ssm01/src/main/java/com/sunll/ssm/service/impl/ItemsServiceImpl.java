@@ -6,6 +6,7 @@ import com.sunll.ssm.service.ItemsService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,5 +36,10 @@ public class ItemsServiceImpl implements ItemsService {
     @Override
     public void saveOrUpdate(Items item) {
         itemsMapper.updateByPrimaryKey(item);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        itemsMapper.deleteByPrimaryKey(id);
     }
 }
